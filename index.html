@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socially Smashing - AI Search Optimization Expert | Ask Better Questions, Get Better Results</title>
     <meta name="description" content="Nicole Jolie helps businesses save thousands on marketing by asking the right questions about AI search optimization. Research-backed insights from 250+ businesses.">
+    <link rel="icon" type="image/png" href="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/favicon+for+ss+v1.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5PWJK3VPB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z5PWJK3VPB');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -25,12 +36,67 @@
             padding: 0 20px;
         }
         
+        /* Navigation - WHITE background with blue font */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo img {
+            
+            height: 50px;
+            width: 200px;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #0E1428;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #F0A202;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #0E1428;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
         /* Header */
         header {
             background: linear-gradient(135deg, #0E1428 0%, #1a2447 100%);
             color: white;
-            padding: 3rem 0;
+            padding: 8rem 0 3rem;
             text-align: center;
+            margin-top: 70px;
         }
         
         .hero-content {
@@ -339,12 +405,6 @@
             100% { transform: translateX(-133.333%); }
         }
         
-        @keyframes autoSlideVideo {
-            0%, 30% { transform: translateX(0); }
-            35%, 65% { transform: translateX(-33.333%); }
-            70%, 100% { transform: translateX(-66.666%); }
-        }
-        
         /* Video Section */
         .video-section {
             background: white;
@@ -379,95 +439,6 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 3px solid #e0e0e0;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: #F0A202;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .service-card.featured {
-            border-color: #d00000;
-            transform: scale(1.05);
-        }
-        
-        .service-card.featured::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #d00000;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #d00000;
-            margin-bottom: 1rem;
-        }
-        
-        .service-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #0E1428;
-        }
-        
-        .features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        
-        .features li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            font-size: 1.1rem;
-        }
-        
-        .features li:before {
-            content: "✓ ";
-            color: #F0A202;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .free-offer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 3rem;
-            background: #0E1428;
-            color: white;
-            border-radius: 15px;
-        }
-        
-        .free-offer h3 {
-            color: #F0A202;
-            font-size: 2rem;
-            margin-bottom: 1rem;
         }
         
         /* Reviews Section */
@@ -617,17 +588,29 @@
             box-shadow: 0 6px 20px rgba(208, 0, 0, 0.4);
         }
         
-        /* Footer */
+        /* Footer - WHITE background with dark font */
         footer {
-            background: #070707;
-            color: white;
+            background: white;
+            color: #070707;
             padding: 3rem 0 2rem;
+            border-top: 1px solid #e0e0e0;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: 200px;
+            object-fit: contain;
         }
         
         .footer-links {
@@ -635,11 +618,10 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
-            text-align: center;
         }
         
         .footer-links a {
-            color: #F0A202;
+            color: #0E1428;
             text-decoration: none;
             padding: 0.5rem;
             font-size: 1rem;
@@ -647,20 +629,56 @@
         }
         
         .footer-links a:hover {
-            color: white;
+            color: #F0A202;
             text-decoration: underline;
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #333;
+            border-top: 1px solid #e0e0e0;
             font-size: 0.9rem;
-            color: #ccc;
+            color: #666;
+        }
+        
+        /* Loading State */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        /* Success Message */
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            display: none;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
             .container {
                 padding: 0 15px;
             }
@@ -684,14 +702,6 @@
                 font-size: 2.2rem;
             }
             
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-card.featured {
-                transform: none;
-            }
-            
             .problem-grid {
                 grid-template-columns: 1fr;
             }
@@ -700,7 +710,6 @@
                 grid-template-columns: 1fr;
             }
             
-            /* About section mobile layout */
             .about-section .container > div:first-of-type {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
@@ -721,13 +730,11 @@
                 padding: 0.3rem;
             }
             
-            /* Video grid mobile */
             .video-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            /* Carousel mobile */
             .review-slide {
                 min-width: 100%;
             }
@@ -747,27 +754,26 @@
                 height: 260px;
             }
         }
-        
-        /* Loading State */
-        .loading {
-            opacity: 0.7;
-            pointer-events: none;
-        }
-        
-        /* Success Message */
-        .success-message {
-            background: #4CAF50;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            display: none;
-        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="https://nicolejolie.com" target="_blank">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
     <!-- Header -->
-    <header>
+    <header id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="stop-box">
@@ -803,26 +809,30 @@
             
             <p class="subtitle-text" style="font-size: 1.2rem; margin-top: 2rem;"><strong>Here's what I found when I analyzed 250+ business websites...</strong></p>
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>1. Your Site Looks Great But AI Can't Understand It</h3>
-                    <p>Most websites are built for human visitors but completely miss the technical requirements that allow AI systems to understand what your business actually does. You could have the most beautiful site in your industry and still be invisible to AI search.</p>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #d00000;">
+                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">1. Your Site Looks Great But AI Can't Understand It</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Most websites are built for human visitors but completely miss the technical requirements that allow AI systems to understand what your business actually does. You could have the most beautiful site in your industry and still be invisible to AI search.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>2. You Have Expertise But Can't Prove It Online</h3>
-                    <p>Your website states your services but fails to demonstrate your authority in ways that AI systems recognize. When potential clients ask AI for recommendations, you're not even part of the conversation.</p>
+
+                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #F0A202;">
+                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">2. You Have Expertise But Can't Prove It Online</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Your website states your services but fails to demonstrate your authority in ways that AI systems recognize. When potential clients ask AI for recommendations, you're not even part of the conversation.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>3. Your Credibility Exists But Isn't Visible</h3>
-                    <p>Even established businesses often lack the public validation signals that AI looks for when determining trustworthiness. Your reputation matters, but only if AI can verify it.</p>
+
+                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #0E1428;">
+                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">3. Your Credibility Exists But Isn't Visible</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Even established businesses often lack the public validation signals that AI looks for when determining trustworthiness. Your reputation matters, but only if AI can verify it.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>4. Your Professional Profiles Are Incomplete</h3>
-                    <p>Professional credentials and expertise often aren't presented in ways that AI systems can process and rank. You might be highly qualified, but AI will recommend someone else whose profile is structured properly.</p>
+
+                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #d00000;">
+                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">4. Your Professional Profiles Are Incomplete</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Professional credentials and expertise often aren't presented in ways that AI systems can process and rank. You might be highly qualified, but AI will recommend someone else whose profile is structured properly.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>5. Your Content Strategy Misses AI Opportunities</h3>
-                    <p>Businesses typically either try to be everything to everyone or focus so narrowly that they miss hundreds of related questions their ideal clients are asking AI systems.</p>
+
+                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #F0A202;">
+                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">5. Your Content Strategy Misses AI Opportunities</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Businesses typically either try to be everything to everyone or focus so narrowly that they miss hundreds of related questions their ideal clients are asking AI systems.</p>
                 </div>
             </div>
         </div>
@@ -853,7 +863,7 @@
         </div>
     </section>
 
-    <!-- Reviews Section (First Instance) -->
+    <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
             <h2>What It's Like to Work With Nicole</h2>
@@ -883,36 +893,6 @@
                     <div class="review-slide">
                         <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Mary+Sloan+5+Star+Review.png');"></div>
                     </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Melissa+Mitchell+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Nikki+Smith+Beauty+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Rachel+Steward+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Santiago+Deluca+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Tiffany+Radke+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Tracy+Shudo+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Joel+Comm+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn+(2).png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn+(3).png');"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -940,28 +920,9 @@
                     <p style="font-size: 1.1rem; line-height: 1.7; color: #d00000; font-weight: bold;">AI doesn't care about your reputation, it only cares about what it can verify online.</p>
                 </div>
 
-                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #0E1428;">
-                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">3. Your Website Lists What You Do, But Doesn't Prove You're the Expert</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">Most business websites function like digital brochures, stating services without demonstrating deep knowledge in ways that AI systems recognize as authoritative.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: #d00000; font-weight: bold;">When potential clients ask AI for recommendations, you're not even in the conversation.</p>
-                </div>
-
-                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #d00000;">
-                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">4. Your Professional Credentials Are Buried or Incomplete</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">Even highly qualified professionals often have incomplete online profiles that fail to communicate their expertise in ways AI systems can process and rank.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: #d00000; font-weight: bold;">You might be the most qualified person in your field, but AI will recommend someone else because their profile is structured properly.</p>
-                </div>
-
-                <div style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #F0A202;">
-                    <h3 style="color: #0E1428; font-size: 1.6rem; margin-bottom: 1rem;">5. You're Either Too Broad or Too Narrow for AI to Understand</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">Businesses typically either try to be everything to everyone, or focus so narrowly that they miss hundreds of related questions their ideal clients are asking AI.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: #d00000; font-weight: bold;">Either way, you're leaving money on the table because AI can't match you with the right searches.</p>
-                </div>
-
                 <div style="background: #0E1428; color: white; padding: 2.5rem; border-radius: 15px; text-align: center;">
                     <h3 style="color: #F0A202; font-size: 1.8rem; margin-bottom: 1.5rem;">AI Search Authority is Being Claimed Right Now</h3>
                     <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">Being AI educated isn't optional anymore, it's required for business survival. Your customers are already using AI to find services, and if you don't understand how AI search works, you're losing them to competitors who do.</p>
-                    <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">Companies that establish AI search authority today become the default recommendations tomorrow. Once AI systems learn to trust and recommend your business, that advantage compounds. You become the go-to answer in your niche.</p>
                     <p style="font-size: 1.2rem; line-height: 1.6;">The shift is happening whether you participate or not. Your choice is simple: learn how AI search works and position your business accordingly, or watch AI-educated competitors claim your market share.</p>
                 </div>
             </div>
@@ -978,29 +939,17 @@
                 What would it SAVE you in time, money, and research if you knew exactly what you need to know before your next marketing meeting?
             </div>
             
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 3rem; border-radius: 15px; margin: 3rem auto; max-width: 900px; border: 2px solid #F0A202;">
-                <h3 style="color: #F0A202; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Before We Do Anything, Let's Talk for 10 Minutes</h3>
-                <p style="font-size: 1.2rem; line-height: 1.6; text-align: center; margin-bottom: 2rem;">I want to understand your situation and make sure this actually makes sense for you. No sales pitch, just a conversation between two business owners.</p>
-                <div style="text-align: center;">
-                    <a href="#contact" style="display: inline-block; background: #F0A202; color: #0E1428; padding: 15px 30px; font-size: 1.2rem; text-decoration: none; border-radius: 8px; font-weight: bold;">Schedule a Brief Call</a>
-                </div>
-            </div>
-
             <div style="background: rgba(255, 255, 255, 0.1); padding: 3rem; border-radius: 15px; margin: 3rem auto; max-width: 800px; border: 2px solid #F0A202;">
                 <h3 style="color: #F0A202; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">I'll Put Together Some Thoughts on Your Specific Situation for $497</h3>
                 <p style="font-size: 1.2rem; line-height: 1.6; text-align: center; margin-bottom: 2rem;">If it's not the most useful marketing analysis you've ever received, just say so and I'll refund it immediately. No questions, no hassle.</p>
                 
                 <h4 style="color: #F0A202; font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Here's Exactly What Happens After You Invest $497 in Your Business Education</h4>
                 <ul style="list-style: none; font-size: 1.1rem; line-height: 1.7;">
-                    <li style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(240, 162, 2, 0.1); border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 1:</strong> I research using my proprietary software, credli.ai, into your specific situation</li>
+                    <li style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(240, 162, 2, 0.1); border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 1:</strong> I research your specific situation using my proprietary method that builds a report around your online presence, a process I've honed after researching over 250+ sites and digging deep to find out what is actually ranking them</li>
                     <li style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(240, 162, 2, 0.1); border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 3:</strong> I send you my analysis (usually between 10-16 pages)</li>
                     <li style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(240, 162, 2, 0.1); border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 5:</strong> We hop on a call to go through everything</li>
-                    <li style="padding: 1rem; background: rgba(240, 162, 2, 0.2); border-radius: 8px; border-left: 4px solid #d00000;"><strong>Then you decide</strong> what to do with the information and how you want to implement it</li>
+                    <li style="padding: 1rem; background: rgba(240, 162, 2, 0.2); border-radius: 8px; border-left: 4px solid #d00000;"><strong>Then you decide</strong> what to do with the information and how you want to implement</li>
                 </ul>
-                
-                <div style="background: rgba(240, 162, 2, 0.3); padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #F0A202;">
-                    <p style="font-size: 1.2rem; line-height: 1.6; margin: 0; text-align: center; font-weight: bold;">You will get more from this report and know where you stand online right now than you will by buying more stuff that your marketing agency is telling you to buy.</p>
-                </div>
             </div>
 
             <div style="background: #F0A202; color: #0E1428; padding: 3rem; border-radius: 15px; margin: 3rem auto; max-width: 800px; text-align: center;">
@@ -1045,162 +994,55 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <h2>The AI Authority Report</h2>
-            <p class="services-subtitle">Let me put together some thoughts on your specific situation for $497. If it's not the most useful marketing analysis you've ever received, just say so and I'll refund it immediately. No questions, no hassle.</p>
-            
-            <div class="hook-section">
-                How much are you spending on marketing that you're not sure is working? What if $497 could save you from wasting $10,000+?
-            </div>
-            
-            <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 3px solid #F0A202;">
-                
-                <div style="background: #0E1428; color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
-                    <h3 style="color: #F0A202; font-size: 1.8rem; margin-bottom: 1rem;">Before We Do Anything, Let's Talk</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">I want to understand your situation and make sure this actually makes sense for you. No sales pitch, just a conversation between two business owners.</p>
-                </div>
-
-                <h3 style="color: #0E1428; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Here's Exactly What Happens After You Invest $497 in Your Business</h3>
-                
-                <ul style="list-style: none; font-size: 1.1rem; line-height: 1.7;">
-                    <li style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 1:</strong> I research using my proprietary software, credli.ai, into your specific situation</li>
-                    <li style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 3:</strong> I send you my analysis (usually between 10-16 pages)</li>
-                    <li style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #F0A202;"><strong>Day 5:</strong> We hop on a call to go through everything</li>
-                    <li style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0E1428;"><strong>Then you decide</strong> what to do with the information and how you want to implement it</li>
-                </ul>
-
-                <div style="background: #0E1428; color: white; padding: 2.5rem; border-radius: 10px; margin-bottom: 2rem;">
-                    <p style="font-size: 1.2rem; line-height: 1.7; margin-bottom: 1.5rem;">The business owners who invest in this are the ones who are tired of wondering if their marketing team actually knows what they're doing. They want straight answers from someone who's actually built AI tools and built businesses for 20 years, not someone who read about them.</p>
-                    <p style="font-size: 1.2rem; line-height: 1.7; margin: 0;">If that's you, let's figure this out together.</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <a href="#contact" style="display: inline-block; background: #d00000; color: white; padding: 20px 40px; font-size: 1.3rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(208, 0, 0, 0.3);">Yes, I Want Straight Answers - $497</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>What It's Like to Work With Nicole</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Real client experiences that show her character, work ethic, and dedication</p>
-            
-            <div class="hook-section">
-                When you work with Nicole, you get someone who genuinely cares about your success and delivers results.
-            </div>
-            
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Tracy+Shudo+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/April+Waverly+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Bill+Williams+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Jonathan+Drake+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Leah+Day+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Mary+Sloan+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Melissa+Mitchell+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Nikki+Smith+Beauty+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Rachel+Steward+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Santiago+Deluca+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Tiffany+Radke+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Tracy+Shudo+5+Star+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Joel+Comm+Review.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn.png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn+(2).png');"></div>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-image" style="background-image: url('https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Vanessa+Horn+(3).png');"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
-            <h2>Stress, Overwhelm, and Fear of Failing - I've Been There Too</h2>
+            <h2>Stress, Overwhelm, and Fear of Failing Your Business, I've Been There Too</h2>
             
-            <div style="display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; margin-bottom: 3rem;">
-                <div class="about-content" style="margin: 0;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/%5Bimage%5D+200x200+nicole+about+section+transparent.png" 
+                     alt="Nicole Jolie" 
+                     style="float: right; width: 200px; height: 200px; margin: 0 0 1rem 2rem; border-radius: 10px;"
+                     loading="lazy">
+                
+                <div style="text-align: left; font-size: 1.2rem; line-height: 1.7;">
                     <p style="font-size: 1.3rem; margin-bottom: 2rem; font-style: italic;">Hi, I'm Nicole and I help business owners like yourself find out where they rank in AI.</p>
                     
-                    <p>I do this because I'm a business owner too. For years, I bought every shiny object and believed the promises that "everything will work if you just buy this."</p>
+                    <p style="margin-bottom: 1.5rem;">I do this because I'm a business owner too. For years, I bought every shiny object and believed the promises that "everything will work if you just buy this."</p>
                     
-                    <p><strong>Thousands of dollars later, I realized I didn't need what they were selling.</strong></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Thousands of dollars later, I realized I didn't need what they were selling.</strong></p>
                     
-                    <p>I needed to ask the right questions. I needed answers for MY business, not so they could sell me another product. I needed to know exactly where I stood in search and how to reach my ideal clients.</p>
+                    <p style="margin-bottom: 1.5rem;">I needed to ask the right questions. I needed answers for MY business, not so they could sell me another product. I needed to know exactly where I stood in search and how to reach my ideal clients.</p>
                     
-                    <p>I was stuck because I couldn't figure out the right questions to ask. I didn't know what I was missing because nobody told me.</p>
+                    <p style="margin-bottom: 1.5rem;"><strong>That's why I created this report.</strong></p>
                     
-                    <p><strong>They only told me what worked for their business and their product they were selling.</strong></p>
+                    <p style="margin-bottom: 1.5rem;">This report will save you thousands of dollars, time, frustration, and feelings of inadequacy.</p>
                     
-                    <p>I see this every day when I research websites. Business owners get defensive when I point out gaps because they feel stupid for not knowing the right questions to ask. They're spending money they don't have to waste.</p>
-                    
-                    <p><strong>That's why I created this report.</strong></p>
-                    
-                    <p>I created it for myself first, then for other business owners who need to know exactly what questions to ask their marketing team. This report will save you thousands of dollars, time, frustration, and feelings of inadequacy.</p>
-                    
-                    <p><strong>Most importantly, it will save you from being held hostage by marketing firms that lock you into monthly contracts.</strong></p>
-                </div>
-                
-                <div style="text-align: center;">
-                    <img src="https://your-aws-bucket.s3.amazonaws.com/images/nicole-about-photo.jpg" 
-                         alt="Nicole Jolie - AI Search Optimization Expert" 
-                         style="width: 100%; max-width: 300px; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);"
-                         loading="lazy">
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; font-style: italic;">Nicole Jolie<br>AI Search Optimization Researcher</p>
+                    <p style="margin-bottom: 2rem;"><strong>Most importantly, it will save you from being held hostage by marketing firms that lock you into monthly contracts.</strong></p>
                 </div>
             </div>
             
-            <div class="credentials">
-                <div class="credential-item">
-                    <h4>Extensive Business Research</h4>
-                    <p>Analyzed 250+ businesses from 2-100 employees across multiple industries to identify AI search trends</p>
+            <div style="max-width: 1000px; margin: 4rem auto 0;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 3rem; color: #0E1428; text-align: center;">Why Trust Nicole?</h2>
+                
+                <div style="margin-bottom: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #d00000;">
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0E1428; text-align: left;">Extensive Business Research</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: left;">Analyzed 250+ businesses from 2-100 employees across multiple industries to identify AI search trends</p>
                 </div>
-                <div class="credential-item">
-                    <h4>Early AI Search Adopter</h4>
-                    <p>Researching AI search optimization since before most agencies knew it existed</p>
+                
+                <div style="margin-bottom: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #F0A202;">
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0E1428; text-align: left;">Early AI Search Adopter</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: left;">Researching AI search optimization since before most agencies knew it existed</p>
                 </div>
-                <div class="credential-item">
-                    <h4>Money-Saving Focus</h4>
-                    <p>My assessments focus on where you can save money while improving results</p>
+                
+                <div style="margin-bottom: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #0E1428;">
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0E1428; text-align: left;">Money-Saving Focus</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: left;">My assessments focus on where you can save money while improving results</p>
                 </div>
-                <div class="credential-item">
-                    <h4>Educational Approach</h4>
-                    <p>I teach you what questions to ask rather than trying to sell you more services</p>
+                
+                <div style="padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 6px solid #d00000;">
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0E1428; text-align: left;">Educational Approach</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: left;">I teach you what questions to ask rather than trying to sell you more services</p>
                 </div>
             </div>
         </div>
@@ -1237,13 +1079,12 @@
                     <select id="business-type" name="business-type" required>
                         <option value="">Select...</option>
                         <option value="law-firm">Law Firm</option>
-                        <option value="medical-practice">Medical Practice</option>
+                        <option value="health-care">Health Care</option>
                         <option value="consulting">Consulting</option>
                         <option value="retail">Retail</option>
-                        <option value="restaurant">Restaurant/Food Service</option>
+                        <option value="farming-agriculture">Farming/Agriculture</option>
                         <option value="real-estate">Real Estate</option>
                         <option value="technology">Technology</option>
-                        <option value="manufacturing">Manufacturing</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
@@ -1273,6 +1114,9 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
+            </div>
             <div class="footer-links">
                 <a href="/privacy-policy.html">Privacy Policy</a>
                 <a href="/terms-of-service.html">Terms of Service</a>
@@ -1297,6 +1141,12 @@
         // Google Sheets Integration
         const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
         
+        // Mobile menu toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        });
+        
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -1304,12 +1154,10 @@
             const successMessage = document.getElementById('successMessage');
             const form = e.target;
             
-            // Show loading state
             submitBtn.textContent = 'Submitting...';
             submitBtn.disabled = true;
             form.classList.add('loading');
             
-            // Collect form data
             const formData = {
                 timestamp: new Date().toISOString(),
                 name: form.name.value,
@@ -1321,7 +1169,6 @@
             };
             
             try {
-                // Send to Google Sheets
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'cors',
@@ -1332,11 +1179,9 @@
                 });
                 
                 if (response.ok) {
-                    // Show success message
                     successMessage.style.display = 'block';
                     form.reset();
                     
-                    // Send to Google Analytics if available
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submit', {
                             event_category: 'engagement',
@@ -1350,14 +1195,12 @@
                 console.error('Error:', error);
                 alert('There was an error submitting your form. Please try again or email me directly at nicole@sociallysmashing.com');
             } finally {
-                // Reset button state
                 submitBtn.textContent = 'Get My AI Visibility Assessment';
                 submitBtn.disabled = false;
                 form.classList.remove('loading');
             }
         });
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1371,7 +1214,6 @@
             });
         });
         
-        // Review image lightbox functionality
         document.querySelectorAll('.review-image').forEach(img => {
             img.addEventListener('click', function() {
                 const lightbox = document.createElement('div');
@@ -1410,7 +1252,6 @@
             });
         });
         
-        // Lazy loading for images
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
