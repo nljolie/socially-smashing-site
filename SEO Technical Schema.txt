@@ -1,0 +1,70 @@
+# SEO Technical Schema
+
+## Internal Anchor Text Linking
+
+- For each published .txt article:
+  - Scan body text for each of the following 25 target keywords or their natural variants.
+  - For each detected keyword, create an internal hyperlink (anchor text) pointing to:
+    - The most contextually relevant related article/page covering that term.
+    - If multiple articles exist, prioritize the most recent or highest authority.
+  - Ensure no broken links and avoid circular references.
+  - Maintain a site-wide log of all anchor links created, updating as content changes.
+  - **Anchor log must not include any personal information; keep entries for the minimum duration needed for site maintenance.**
+
+## Target Keywords for Anchoring
+
+AI search consultant  
+AI consultant services  
+AI for business optimization  
+AI-powered business strategy  
+Generative AI consulting  
+AI search engine optimization  
+AI for decision making  
+Business process automation with AI  
+AI adoption in business  
+AI-driven digital transformation  
+AI implementation roadmap  
+Enterprise AI solutions  
+AI use cases in business  
+AI innovation strategy  
+AI analytics for business  
+Voice search optimization AI  
+Visual search AI  
+AI content optimization  
+AI strategy consulting  
+AI tool stack for consultants  
+Machine learning consulting  
+Large language model consulting  
+AI market research tools  
+AI SEO for enterprises  
+AI-enabled business insights  
+
+## Metadata and Tagging Guidelines
+
+- For every article:
+  - In structured metadata, use the schema.org Article type.
+  - Add a "keywords" field including all used target keywords in the article.
+  - Add an "about" field with the three most relevant keywords from the list.
+  - Tag articles with additional topic-relevant keywords for clustering.
+- Use <meta name="keywords"> in the HTML for each article page with all relevant terms.
+
+## Alt-Tagging for Images and Videos
+
+- Alt-text for every image and video must contain:
+  - At least one target keyword from the 25-term list.
+  - A short, accurate description of the media's purpose or content (max 120 characters).
+  - **Avoid mandatory brand mentions; alt text must be clear, concise, and relevant to the media context.**
+
+- If the article focuses on a specific keyword, that term is prioritized in image and video alt-tags.
+
+## Search Ranking & Interlinking
+
+- Ensure every article has outbound internal links to at least three other relevant articles using anchor keywords.
+- Link to cornerstone articles wherever possible when a keyword is a main category.
+- Update links dynamically as new content is published or removed to maintain network integrity.
+
+# No Content Editing or Creation
+- Do not write, change, or edit article content.
+- Only add, update, or maintain internal links, metadata, and alt-tags as specified.
+
+# End of Schema
