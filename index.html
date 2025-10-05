@@ -1380,8 +1380,9 @@
     </footer>
 
     <script>
+    <script>
         // Google Sheets Integration
-        const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiFQ9HAnQSB4EVEumbuv0fH09WKBq2GUvFriogOudtqepZzt75LOHZqZau2xJtfelR1Q/exec';
         
         // Mobile menu toggle
         document.getElementById('mobileToggle').addEventListener('click', function() {
@@ -1389,69 +1390,58 @@
             navMenu.classList.toggle('active');
         });
         
+        // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const successMessage = document.getElementById('successMessage');
-            const form = e.target;
-            
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-            form.classList.add('loading');
-            
-            const formData = {
-                timestamp: new Date().toISOString(),
-                name: form.name.value,
-                email: form.email.value,
-                company: form.company.value,
-                businessType: form['business-type'].value,
-                service: form.service.value,
-                challenges: form['current-challenges'].value
-            };
-            
-            try {
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-             if (response.ok) {
-    // Track the conversion
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submit', {
-            event_category: 'engagement',
-            event_label: formData.service
-        });
-    }
+    e.preventDefault();
     
-    // Redirect to thank you page
-    window.location.href = '/thank-you.html';
-}
-                    
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'form_submit', {
-                            event_category: 'engagement',
-                            event_label: formData.service
-                        });
-                    }
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error submitting your form. Please try again or email me directly at nicole@sociallysmashing.com');
-            } finally {
-                submitBtn.textContent = 'Get My AI Authority Assessment';
-                submitBtn.disabled = false;
-                form.classList.remove('loading');
-            }
+    const form = e.target;
+    const submitBtn = document.getElementById('submitBtn');
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    
+    const formData = {
+        timestamp: new Date().toISOString(),
+        name: form.name.value,
+        email: form.email.value,
+        company: form.company.value,
+        businessType: form['business-type'].value,
+        companyUrl: form['company-url'].value,
+        challenges: form['current-challenges'].value
+    };
+    
+    try {
+        await fetch('https://script.google.com/macros/s/AKfycbwiFQ9HAnQSB4EVEumbuv0fH09WKBq2GUvFriogOudtqepZzt75LOHZqZau2xJtfelR1Q/exec', {
+            method: 'POST',
+            body: JSON.stringify(formData)
         });
         
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+                event_category: 'engagement'
+            });
+        }
+        
+        window.location.href = '/thank-you.html';
+    } catch (error) {
+        alert('Error submitting form. Please email nicole@sociallysmashing.com');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get Your AI Authority Assessment';
+    }
+});
+            
+            // Track the form submission
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    event_category: 'engagement'
+                });
+            }
+            
+            // Redirect immediately to thank you page
+            window.location.href = '/thank-you.html';
+        });
+        
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1465,6 +1455,7 @@
             });
         });
         
+        // Review image lightbox
         document.querySelectorAll('.review-image').forEach(img => {
             img.addEventListener('click', function() {
                 const lightbox = document.createElement('div');
@@ -1503,6 +1494,7 @@
             });
         });
         
+        // Lazy load images
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
