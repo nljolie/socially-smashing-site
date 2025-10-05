@@ -1420,9 +1420,18 @@
                     body: JSON.stringify(formData)
                 });
                 
-                if (response.ok) {
-                    successMessage.style.display = 'block';
-                    form.reset();
+             if (response.ok) {
+    // Track the conversion
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit', {
+            event_category: 'engagement',
+            event_label: formData.service
+        });
+    }
+    
+    // Redirect to thank you page
+    window.location.href = '/thank-you.html';
+}
                     
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submit', {
