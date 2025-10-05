@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Your AI Authority Report Request Received | Socially Smashing</title>
+    <meta name="description" content="Thank you for requesting your AI Authority Report. Check your email for next steps.">
+    <link rel="icon" type="image/png" href="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/favicon+for+ss+v1.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #070707;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo img {
+            height: 50px;
+            width: 200px;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #0E1428;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #F0A202;
+        }
+        
+        .thank-you-section {
+            background: linear-gradient(135deg, #0E1428 0%, #1a2447 100%);
+            color: white;
+            padding: 8rem 0 3rem;
+            text-align: center;
+            margin-top: 70px;
+            min-height: 40vh;
+        }
+        
+        .thank-you-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #F0A202;
+        }
+        
+        .thank-you-section p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #F0A202;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #0E1428;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 5rem 0;
+        }
+        
+        .content-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 6px solid #F0A202;
+        }
+        
+        .content-box h2 {
+            font-size: 2rem;
+            color: #0E1428;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-box strong {
+            color: #d00000;
+        }
+        
+        .article-callout {
+            background: linear-gradient(135deg, #0E1428 0%, #1a2447 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .article-callout h3 {
+            color: #F0A202;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-callout p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d00000;
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(208, 0, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #b50000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(208, 0, 0, 0.4);
+        }
+        
+        .social-section {
+            background: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .social-section h3 {
+            font-size: 2rem;
+            color: #0E1428;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: inline-block;
+            background: #0E1428;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #F0A202;
+            color: #0E1428;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: white;
+            color: #070707;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: 200px;
+            object-fit: contain;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: #0E1428;
+            text-decoration: none;
+            padding: 0.5rem;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #F0A202;
+            text-decoration: underline;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content-box {
+                padding: 2rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://nicolejolie.com" target="_blank">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="checkmark">✓</div>
+            <h1>Thank You!</h1>
+            <p>Your AI Authority Report request has been received.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-box">
+                <h2>What Happens Next</h2>
+                
+                <p><strong>Check your email from nicole@sociallysmashing.com</strong></p>
+                
+                <p>Your free AI visibility snapshot will arrive within 48 hours. Please check your spam and trash folders if you don't see it in your inbox.</p>
+                
+                <p><strong>Important:</strong> To ensure you receive your report, please whitelist nicole@sociallysmashing.com. Even better, reply to the email and say hello. Let me know any other challenges you're facing that you'd like me to consider in your free report.</p>
+                
+                <p>In the meantime, I'll be working on your analysis to show you exactly where your business appears (or doesn't) in AI search results.</p>
+            </div>
+
+            <div class="article-callout">
+                <h3>While You Wait: Read This Critical Article</h3>
+                <p>Google is making the blue links disappear. Discover what this means for your business and how to adapt before your competitors do.</p>
+                <a href="https://www.sociallysmashing.com/blog/google-ai-search-live-healthcare-law-finance.html" class="cta-button">Read: How Google's AI Search Live Could Make or Break Your Business</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="container">
+            <h3>Connect With Nicole</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Follow for daily AI search insights, strategies, and industry updates</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/nicolejolie/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://www.youtube.com/@aisearchconsultant" target="_blank" class="social-link">YouTube</a>
+                <a href="https://substack.com/@nicolejolieaiconsultant" target="_blank" class="social-link">Substack</a>
+                <a href="https://www.tiktok.com/@aisearchconsultant?lang=en" target="_blank" class="social-link">TikTok</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
+            </div>
+            <div class="footer-links">
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="/gdpr-ccpa-policy.html">GDPR & CCPA Policy</a>
+                <a href="/affiliate-disclaimer.html">Affiliate Disclaimer</a>
+                <a href="/anti-class-action.html">Anti-Class Action Provision</a>
+                <a href="/dmca-policy.html">DMCA Policy</a>
+                <a href="/earnings-disclaimer.html">Earnings & Results Disclaimer</a>
+                <a href="/legal-disclaimer.html">Legal Disclaimer</a>
+                <a href="/optin-agreement.html">Optin Agreement</a>
+                <a href="/refund-policy.html">Refund Policy</a>
+                <a href="/testimonial-disclaimer.html">Testimonial Disclaimer</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Socially Smashing. All rights reserved.</p>
+                <p>AI Search Optimization Research | Educational Business Consulting</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
