@@ -1380,8 +1380,7 @@
     </footer>
 
     <script>
-    <script>
-        // Google Sheets Integration
+        // Google Sheets Integration URL
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiFQ9HAnQSB4EVEumbuv0fH09WKBq2GUvFriogOudtqepZzt75LOHZqZau2xJtfelR1Q/exec';
         
         // Mobile menu toggle
@@ -1392,53 +1391,53 @@
         
         // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const submitBtn = document.getElementById('submitBtn');
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
-    
-    const formData = {
-        timestamp: new Date().toISOString(),
-        name: form.name.value,
-        email: form.email.value,
-        company: form.company.value,
-        businessType: form['business-type'].value,
-        companyUrl: form['company-url'].value,
-        challenges: form['current-challenges'].value
-    };
-    
-    try {
-        await fetch('https://script.google.com/macros/s/AKfycbwiFQ9HAnQSB4EVEumbuv0fH09WKBq2GUvFriogOudtqepZzt75LOHZqZau2xJtfelR1Q/exec', {
-            method: 'POST',
-            body: JSON.stringify(formData)
-        });
-        
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submit', {
-                event_category: 'engagement'
-            });
-        }
-        
-        window.location.href = '/thank-you.html';
-    } catch (error) {
-        alert('Error submitting form. Please email nicole@sociallysmashing.com');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Get Your AI Authority Assessment';
-    }
-});
+            e.preventDefault();
             
-            // Track the form submission
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submit', {
-                    event_category: 'engagement'
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Collect form data
+            const formData = {
+                timestamp: new Date().toISOString(),
+                name: form.name.value,
+                email: form.email.value,
+                company: form.company.value,
+                businessType: form['business-type'].value,
+                companyUrl: form['company-url'].value,
+                challenges: form['current-challenges'].value
+            };
+            
+            try {
+                // Submit to Google Sheets
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
                 });
+                
+                // Track with Google Analytics if available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        event_category: 'engagement'
+                    });
+                }
+                
+                // Redirect to thank you page
+                window.location.href = '/thank-you.html';
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Error submitting form. Please email nicole@sociallysmashing.com');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Your AI Authority Assessment';
             }
-            
-            // Redirect immediately to thank you page
-            window.location.href = '/thank-you.html';
         });
         
         // Smooth scroll for anchor links
@@ -1514,3 +1513,4 @@
         }
     </script>
 </body>
+</html>
