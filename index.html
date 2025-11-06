@@ -1158,19 +1158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                 <li><a href="/blog">Blog</a></li>
-                <li><a href="/about.html">About</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
-        </div>
-    </nav>
+    <script src="/menu.js"></script>
 
     <!-- Header -->
     <header id="home">
@@ -1589,11 +1577,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Google Sheets Integration URL
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiFQ9HAnQSB4EVEumbuv0fH09WKBq2GUvFriogOudtqepZzt75LOHZqZau2xJtfelR1Q/exec';
         
-        // Mobile menu toggle
-        document.getElementById('mobileToggle').addEventListener('click', function() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        });
         
         // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
