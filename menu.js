@@ -1,4 +1,4 @@
-// menu.js - Centralized Navigation Menu
+// menu.js - Centralized Navigation Menu with Mobile Support
 document.addEventListener('DOMContentLoaded', function() {
     const navHTML = `
         <nav>
@@ -8,15 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png" alt="Socially Smashing Logo">
                     </a>
                 </div>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
             </div>
         </nav>
     `;
     
     // Insert the navigation at the beginning of the body
     document.body.insertAdjacentHTML('afterbegin', navHTML);
+    
+    // Mobile menu toggle functionality
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    });
 });
