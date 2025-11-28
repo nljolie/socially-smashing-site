@@ -5,14 +5,14 @@
 
 :root {
     /* --- PURPLE PALETTE --- */
-    --primary-purple: #3c096c;
-    --accent-purple: #7b2cbf;
-    --bg-dark: #10002b;
-    --bg-mid: #240046;
-    --text-light: #e0aaff;
-    --text-white: #ffffff;
-    --bg-white: #ffffff;
-    --text-dark: #10002b;
+    --primary-purple: #3c096c;      /* Main Brand Color */
+    --accent-purple: #7b2cbf;       /* Brighter Accent */
+    --bg-dark: #10002b;             /* Dark Background */
+    --bg-mid: #240046;              /* Section Background */
+    --text-light: #e0aaff;          /* Text on Dark BG */
+    --text-white: #ffffff;          /* Headlines */
+    --bg-white: #ffffff;            /* White Cards/Footer */
+    --text-dark: #10002b;           /* Text on White BG */
 
     /* --- FONTS --- */
     --font-header: 'Manrope', sans-serif;
@@ -20,7 +20,7 @@
 }
 
 /* =========================================
-   2. GLOBAL RESET
+   2. GLOBAL RESET & TYPOGRAPHY
    ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -50,7 +50,7 @@ p, li, a, div, span {
    3. LAYOUT & SPACING
    ========================================= */
 .container {
-    max-width: 1200px;
+    max-width: 1200px; /* WIDE CONTAINER */
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
@@ -63,27 +63,21 @@ section {
 }
 
 /* =========================================
-   4. COMPONENT STYLES
+   4. NAVIGATION (White Menu Bar)
    ========================================= */
-
-/* --- MENU / NAVIGATION FIX --- */
-/* This ensures the menu.js injects into a normal sized bar, not a giant block */
 nav {
-    background-color: #ffffff; /* White background for the menu */
+    background-color: #ffffff; /* White background */
     width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Use these if menu.js output needs styling hooks */
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+/* =========================================
+   5. COMPONENT STYLES
+   ========================================= */
 
 /* --- BUTTONS --- */
 .btn-primary {
@@ -101,6 +95,7 @@ nav {
     font-size: 22px;
     margin-top: 20px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -109,7 +104,7 @@ nav {
     background-color: var(--primary-purple);
 }
 
-/* --- FULL WIDTH BANNERS (Marketing Banners Only) --- */
+/* --- FULL WIDTH BANNERS --- */
 .full-width-banner {
     width: 100vw;
     position: relative;
@@ -131,10 +126,9 @@ nav {
     margin: 50px 0;
 }
 
-/* --- VIDEO GRID FIX (1 ROW, 3 COLUMNS) --- */
+/* --- VIDEO GRID (1 Row, 3 Columns) --- */
 .video-grid {
     display: grid;
-    /* Forces 3 equal columns side-by-side */
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 30px;
     margin-top: 40px;
@@ -156,22 +150,19 @@ nav {
     display: block;
 }
 
-/* --- REVIEWS OVERRIDE (2 COLUMNS) --- */
-/* Forces Dark Background for Section */
+/* --- REVIEWS SECTION (2 Columns, White Cards) --- */
 #reviews {
-    background-color: var(--bg-dark) !important;
+    background-color: var(--bg-mid) !important; /* Distinct Background */
     padding: 80px 0 !important;
 }
 
-#reviews h2 { color: var(--text-white) !important; font-family: 'Manrope', sans-serif !important; }
-#reviews p { color: var(--text-light) !important; font-family: 'Inter', sans-serif !important; }
+#reviews h2 { color: var(--text-white) !important; }
 
 /* Styling the Grid Injected by JS */
 .reviews-grid {
     display: grid;
-    /* Forces 2 equal columns side-by-side */
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr; /* 2 Columns */
+    gap: 40px;
     margin-top: 40px;
 }
 
@@ -179,12 +170,67 @@ nav {
     background-color: var(--bg-white) !important;
     color: var(--text-dark) !important;
     border-radius: 8px;
-    padding: 30px;
+    padding: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.review-body { color: #10002b !important; font-family: 'Inter', sans-serif !important; } 
-.review-name { color: #3c096c !important; font-weight: 800 !important; font-family: 'Manrope', sans-serif !important; }
+.review-body { 
+    color: #10002b !important; 
+    font-family: 'Inter', sans-serif !important;
+    font-size: 18px !important;
+} 
+.review-name { 
+    color: #3c096c !important; 
+    font-weight: 800 !important; 
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 20px !important;
+}
+
+/* --- FOOTER (White BG, Dark Text, 3 Cols) --- */
+.site-footer {
+    background-color: #ffffff !important;
+    color: #10002b !important;
+    padding: 60px 0;
+    border-top: 4px solid var(--accent-purple);
+    margin-top: 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Contact | Copyright | Legal */
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-col h3 {
+    color: #3c096c !important;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    color: #10002b !important;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #10002b !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-col a:hover {
+    color: #7b2cbf !important;
+    text-decoration: underline;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li { margin-bottom: 8px; }
 
 /* --- MODAL --- */
 .modal {
@@ -207,7 +253,7 @@ nav {
     text-align: center;
     border: 2px solid var(--accent-purple);
     color: var(--text-white);
-    position: relative; /* For close button positioning */
+    position: relative;
 }
 
 .close-btn {
@@ -232,8 +278,10 @@ input {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .reviews-grid { grid-template-columns: 1fr !important; } /* Stack reviews on phone */
-    .video-grid { grid-template-columns: 1fr !important; } /* Stack videos on phone */
+    .reviews-grid { grid-template-columns: 1fr !important; }
+    .video-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
     h1 { font-size: 36px; }
     .btn-primary { width: 100%; text-align: center; }
+    .container { padding: 0 20px; }
 }
