@@ -1,210 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KM9559D6');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socially Smashing | AI Authority</title>
+    <title>Socially Smashing | AI Authority & Search Optimization</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <style>
-        /* =========================================
-           1. CONFIGURATION (Based on Nicole Jolie Site)
-           ========================================= */
-        :root {
-            /* MAPPED COLORS: Rust/Cream -> Purple/Dark */
-            --primary-color: #7b2cbf;       /* Was Rust -> Now Accent Purple */
-            --secondary-color: #3c096c;     /* Was Ochre -> Now Mid Purple */
-            --bg-light: #240046;            /* Was Cream -> Now Deep Purple */
-            --bg-dark: #10002b;             /* Was Charcoal -> Now Darkest Purple */
-            --text-main: #e0aaff;           /* Was Dark Text -> Now Light Lavender */
-            --text-highlight: #ffffff;      /* Headlines */
-            --card-bg: #ffffff;             /* White Cards */
-            
-            --font-header: 'Manrope', sans-serif;
-            --font-body: 'Inter', sans-serif;
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Socially Smashing",
+            "founder": {
+                "@type": "Person",
+                "name": "Nicole Jolie",
+                "jobTitle": "AI Search Consultant",
+                "description": "AI Search Consultant specializing in helping businesses optimize for AI-powered search platforms"
+            },
+            "url": "https://sociallysmashing.com",
+            "logo": "https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png",
+            "sameAs": [
+                "https://www.linkedin.com/in/nicolejolie",
+                "https://twitter.com/yourhandle",
+                "https://www.youtube.com/@yourchannel"
+            ],
+            "description": "AI Search Optimization and Consulting Services",
+            "areaServed": "United States"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Nicole Jolie",
+            "jobTitle": "AI Search Consultant",
+            "worksFor": { "@type": "Organization", "name": "Socially Smashing" },
+            "url": "https://sociallysmashing.com",
+            "image": "https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/Nicole+Headshot+128x128+Photo.png",
+            "sameAs": [
+                "https://www.linkedin.com/in/nicolejolie/",
+                "https://www.tiktok.com/@nicolejolieishere",
+                "https://www.youtube.com/@NicolesAIJourney",
+                "https://substack.com/@nicolejolie",
+                "https://www.instagram.com/therealnicolejolie/"
+            ],
+            "knowsAbout": ["Artificial Intelligence", "AI Search Optimization", "AEO", "ChatGPT", "Claude", "Perplexity", "Business AI Strategy"],
+            "alumniOf": "San Jose State University",
+            "description": "AI Search Consultant helping businesses get discovered in ChatGPT, Claude, and Perplexity"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Socially Smashing",
+            "url": "https://sociallysmashing.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://sociallysmashing.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Gen X AI Rising Community",
+            "description": "Learn how to optimize for AI search",
+            "provider": { "@type": "Organization", "name": "Socially Smashing", "sameAs": "https://sociallysmashing.com" },
+            "offers": { "@type": "Offer", "category": "Professional Development", "price": "49.00", "priceCurrency": "USD" }
         }
-
-        /* =========================================
-           2. GLOBAL STYLES (The "Working" CSS)
-           ========================================= */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            font-size: 20px;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-header);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            color: var(--text-highlight);
-            text-transform: uppercase;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* =========================================
-           3. SPECIFIC FIXES YOU ASKED FOR
-           ========================================= */
-        
-        /* FIX: VIDEO GRID (1 ROW, 3 COLS) */
-        .video-grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* FORCES 3 ACROSS */
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .video-wrapper {
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 4px solid var(--bg-light);
-            border-radius: 12px;
-            background: #000;
-        }
-        .video-wrapper video { width: 100%; display: block; }
-
-        /* FIX: REVIEWS OVERRIDE (2 COLS, 6 ROWS) */
-        /* This forces the JS injected content to behave */
-        #global-reviews {
-            background-color: var(--bg-light) !important; /* Overrides beige */
-            padding: 60px 0;
-        }
-        
-        /* Targeted deep selector for the reviews.js output */
-        .reviews-grid {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important; /* FORCES 2 COLS */
-            gap: 30px !important;
-            max-width: 1200px !important;
-            margin: 0 auto !important;
-        }
-        
-        .review-card-static {
-            background: #fff !important; /* Keep cards white */
-            color: #10002b !important; /* Dark text on white cards */
-            border-radius: 12px !important;
-            padding: 30px !important;
-        }
-        
-        .review-body { font-family: 'Inter', sans-serif !important; color: #10002b !important; }
-        .review-name { color: #3c096c !important; font-weight: bold !important; }
-
-        /* FIX: MENU (No Banner Image) */
-        .menu-wrapper {
-            background: #fff;
-            padding: 10px 0;
-            width: 100%;
-        }
-
-        /* =========================================
-           4. STANDARD COMPONENTS
-           ========================================= */
-        
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 20px 50px;
-            font-family: var(--font-header);
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid #fff;
-            box-shadow: 6px 6px 0px #fff;
-            transition: all 0.3s;
-            cursor: pointer;
-            font-size: 22px;
-        }
-        .btn-primary:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #fff;
-            background-color: var(--secondary-color);
-        }
-
-        .full-width-banner {
-            width: 100%;
-            display: block;
-            cursor: pointer;
-            margin: 0;
-            line-height: 0;
-        }
-        .full-width-banner img { width: 100%; height: auto; }
-
-        .logic-box {
-            background: var(--bg-light);
-            border: 2px solid var(--primary-color);
-            padding: 50px;
-            border-radius: 12px;
-            margin: 50px 0;
-        }
-
-        /* FAQ Styling */
-        .faq-item { border-bottom: 1px solid var(--primary-color); padding: 30px 0; }
-        .faq-question {
-            font-family: var(--font-header);
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-highlight);
-            display: flex;
-            justify-content: space-between;
-        }
-        .faq-answer { display: none; margin-top: 20px; color: var(--text-main); }
-        .faq-item.active .faq-answer { display: block; }
-
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-        .modal-content {
-            background-color: var(--bg-light);
-            margin: 5% auto;
-            padding: 50px;
-            width: 90%;
-            max-width: 600px;
-            border: 2px solid var(--primary-color);
-            border-radius: 12px;
-            text-align: center;
-            position: relative;
-        }
-        .close-btn { position: absolute; top: 15px; right: 25px; font-size: 40px; cursor: pointer; color: #fff; }
-        input { width: 100%; padding: 20px; margin-bottom: 20px; border-radius: 6px; border: 1px solid var(--primary-color); background: var(--bg-dark); color: white; font-size: 18px; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .video-grid-container { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr !important; }
-            h1 { font-size: 36px; }
-            .btn-primary { width: 100%; }
-        }
-    </style>
+    ]
+    </script>
 </head>
 <body>
 
-    <div class="menu-wrapper">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM9559D6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <nav>
         <div class="container">
             <script src="/menu.js"></script>
         </div>
-    </div>
+    </nav>
 
-    <section style="padding: 100px 0; text-align: center;">
+    <section class="bg-dark" style="padding-top: 140px; text-align: center;">
         <div class="container">
-            <h1>The Real Reason You Are Struggling Is Not "Lack of Skill." <br><span style="color: var(--primary-color);">It Is Invisibility.</span></h1>
-            <p style="font-size: 24px; max-width: 900px; margin: 0 auto 40px;">You have spent thousands of dollars learning <em>how</em> to sell. But you have no one to sell <em>to</em>.</p>
+            <h1 style="color: white; max-width: 900px; margin: 0 auto;">My Mission Is Simple: To Stop You From Being Invisible.</h1>
+            <p style="font-size: 22px; max-width: 800px; margin: 20px auto 40px; color: #ddd;">To Engineer Your Online Presence So You Are <strong>Ranked Top</strong>, <strong>Seen First</strong>, And <strong>Trusted Instantly</strong> By High-Paying Clients.</p>
             
             <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Start Your 7-Day Free Trial</a>
-            <p style="font-size: 14px; margin-top: 15px; opacity: 0.7;">Then just $49/mo. Cancel anytime.</p>
+            
+            <div class="cards-grid">
+                <div class="mission-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Get Ranked</h4>
+                    <p>Dominate the AI results. When they ask 'Who is the best?', the answer must be YOU.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Get Seen</h4>
+                    <p>Visibility is the prerequisite to revenue. If AI can't see you, your clients can't buy from you.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Stay Relevant</h4>
+                    <p>Future-proof your brand. As search changes, ensure your business remains the recommendation.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-user-check"></i>
+                    <h4>Get Clients</h4>
+                    <p>Turn visibility into income. Capture high-intent leads who already trust your authority.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -212,100 +130,159 @@
         <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Top+1+-+1920x400.png" alt="Free Download">
     </div>
 
-    <section style="padding: 100px 0; background-color: var(--bg-dark);">
+    <section class="bg-white">
         <div class="container">
-            <h2 style="color: var(--primary-color);">The $5,000 Coaching Trap</h2>
-            <p>Let’s look at the math, because the math does not lie. You are likely sitting on a hard drive full of courses.</p>
-            
-            <div class="logic-box">
-                <h3 style="color: #fff;">Why isn't it working?</h3>
-                <p>It is not because the coaching was bad. It is because you bought a Ferrari engine (the skills) but you didn't buy the wheels (the visibility).</p>
-                <p style="font-size: 24px; font-weight: bold; margin-top: 20px; color: #fff;">A $5,000 coaching program cannot help you if you are invisible.</p>
-            </div>
-            
-            <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Fix Your Visibility</a>
+            <h2>The $5,000 Coaching Trap</h2>
+            <p>Let’s look at the math, because the math does not lie. You are likely sitting on a hard drive full of courses. You have likely paid a "High Ticket" coach <strong>$5,000, $10,000, or even more</strong> to teach you strategy, sales, and mindset.</p>
+            <p>And yet, you are still hunting for clients. You are still posting content that disappears into the void.</p>
+            <p><strong>Why?</strong> It is not because the coaching was bad. It is because you bought a Ferrari engine (the skills) but you didn't buy the wheels (the visibility).</p>
+            <p style="font-weight: bold; font-size: 22px;">A $5,000 coaching program cannot help you if you are invisible.</p>
         </div>
     </section>
 
-    <section style="padding: 100px 0; background-color: var(--bg-light);">
+    <section class="bg-beige">
         <div class="container">
-            <h2>The Insurance Policy</h2>
-            <p>I am offering you a trade. Join <strong>Gen X AI Rising</strong>.</p>
-            <ul style="list-style: none; margin-top: 30px;">
-                <li style="margin-bottom: 20px; font-size: 22px;">❌ <strong>Option A:</strong> Spend <strong>$5,000/year</strong> on coaching and stay invisible.</li>
-                <li style="font-size: 22px;">✅ <strong>Option B:</strong> Spend <strong>$49/mo</strong> to get found, get trusted, and get recommended.</li>
+            <h2>The Insurance Policy for Your Business</h2>
+            <p>I am offering you a trade. You stop guessing how to get found. You stop hoping the algorithm picks you. Instead, you join <strong>Gen X AI Rising</strong>.</p>
+            
+            <ul style="list-style: none; margin-top: 30px; font-size: 20px;">
+                <li style="margin-bottom: 20px;">❌ <strong>Option A:</strong> Continue spending <strong>$5,000/year</strong> on coaching, hoping that "this time" it works, while remaining invisible.</li>
+                <li>✅ <strong>Option B:</strong> Spend <strong>$49/mo</strong> to get found, get trusted, and get recommended—so that your $5,000 investment actually pays off.</li>
             </ul>
+
+            <div style="text-align: center;">
+                <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Fix Your Visibility (Free for 7 Days)</a>
+            </div>
         </div>
     </section>
 
-    <section style="padding: 100px 0; background-color: var(--bg-dark); text-align: center;">
+    <section class="bg-white">
         <div class="container">
-            <h2>Watch The Results</h2>
-            <div class="video-grid-container">
-                <div class="video-wrapper">
-                    <video controls preload="none">
-                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Client+Success!.mp4" type="video/mp4">
-                    </video>
-                    <p style="padding: 15px; font-weight: bold; color: white;">Client Success</p>
-                </div>
-                <div class="video-wrapper">
-                    <video controls preload="none">
-                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+I+Love+This%2C+Nicole!.mp4" type="video/mp4">
-                    </video>
-                    <p style="padding: 15px; font-weight: bold; color: white;">"I Love This!"</p>
-                </div>
-                <div class="video-wrapper">
-                    <video controls preload="none">
-                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Shopify+Success!.mp4" type="video/mp4">
-                    </video>
-                    <p style="padding: 15px; font-weight: bold; color: white;">Shopify Success</p>
-                </div>
+            <h2>The Ghost Economy</h2>
+            <p>Here is the hard truth that most "gurus" won't tell you because they don't know it yet: <strong>Google is dying. AI Search is rising.</strong></p>
+            <p>Your clients are no longer scrolling through 10 blue links. They are asking AI: <em>"Who is the best coach for X?"</em></p>
+            <p>If the AI doesn't know who you are, it <strong>cannot</strong> recommend you. It will recommend your competitor. Not because they are better than you, but because they are <strong>visible</strong> to the machine.</p>
+        </div>
+    </section>
+
+    <section class="bg-beige">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center;">
+            <div>
+                <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Nicole_red_suit_512x512.png" alt="Nicole Jolie" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h2>Who Is Behind Gen X AI Rising?</h2>
+                <h3 style="color: #d97706; margin-bottom: 20px;">I am Nicole Jolie.</h3>
+                <p>I work with Gen X entrepreneurs who are excellent at what they do and tired of not being seen.</p>
+                <p>I have spent years around best-selling authors, podcasters, and seven-figure leaders. Their experience is real, but their digital structure does not reflect it.</p>
+                <p style="font-weight: bold; border-left: 4px solid #d97706; padding-left: 20px;">I built Gen X AI Rising for people like you: experienced, driven, and unwilling to disappear just because the rules of visibility changed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <h2>Stop Chasing. Start Ranking.</h2>
+            <p>We don't do "fluff" here. We do mechanics. Inside <strong>Gen X AI Rising</strong>, you are paying for <strong>ACCESS</strong>.</p>
+            <ul style="margin-left: 20px; margin-top: 20px;">
+                <li>Access to the specific prompts that signal authority to AI.</li>
+                <li>Access to the frameworks that turn you into an entity that AI trusts.</li>
+                <li>Access to a group of peers who are actively implementing this.</li>
+            </ul>
+            <div style="text-align: center;">
+                <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Get Access Now - $49/mo</a>
             </div>
         </div>
     </section>
 
     <div id="global-reviews"></div>
 
-    <div class="full-width-banner" onclick="openModal()">
-        <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Middle+2-+1920x400.png" alt="Download Guide">
-    </div>
-
-    <section style="padding: 100px 0; background-color: var(--bg-light);">
+    <section class="bg-white">
         <div class="container">
-            <h2 style="text-align: center;">Frequently Asked Questions</h2>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Why is there a 7-Day Free Trial? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Because talk is cheap. I want you to see the framework before you pay a dime.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Why $49/month? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Because access beats theory. For less than a daily coffee, you get continuous access to 20+ years of expertise.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Is there a contract? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">No. Cancel anytime.</div>
+            <h2 style="text-align: center;">Logic Is Good. Results Are Better.</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Don't take my word for it. Listen to the people who stopped being invisible.</p>
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <video controls preload="none">
+                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Client+Success!.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                    <video controls preload="none">
+                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+I+Love+This%2C+Nicole!.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                    <video controls preload="none">
+                        <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Shopify+Success!.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="container" style="padding: 50px 20px;">
-        <div id="footer-placeholder"></div>
-        <script src="/footer.js"></script>
+    <div class="full-width-banner" onclick="openModal()">
+        <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Middle+2-+1920x400.png" alt="Download Guide">
     </div>
 
-    <script src="/reviews.js"></script>
+    <section class="bg-white">
+        <div class="container">
+            <h2 style="text-align: center;">Frequently Asked Questions</h2>
+            
+            <div style="margin-top: 40px;">
+                <p><strong>1. Why is there a 7-Day Free Trial?</strong><br>
+                Because talk is cheap. Most "gurus" want your money upfront because they know their product doesn't work. I am taking all the risk.</p>
+                
+                <p><strong>2. Are there refunds?</strong><br>
+                <strong>No.</strong> The 7-Day Free Trial <strong>IS</strong> your refund period. We give you full access for free so you can verify the value yourself. If you stay past Day 7, it means you have decided the value is there. We do not provide refunds to people who consume the content and then change their minds. Please read our full <a href="/legal/refund-policy.html" style="color: #d97706; text-decoration: underline;">Refund Policy</a>.</p>
+                
+                <p><strong>3. Why is it $49/month?</strong><br>
+                Because access beats theory. For less than the cost of a daily coffee, you get continuous access to the signals that make AI actually recommend you.</p>
+                
+                <p><strong>4. Is there a contract?</strong><br>
+                No. You can cancel at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;">The Real Risk</h2>
+            <p>The risk isn't $49. The risk is spending the next 12 months invisible, watching your competitors rise because they understood the new rules of AI Search and you didn't.</p>
+            <p><strong>If they can't find you, they can't buy from you.</strong></p>
+            <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Start Your 7-Day Free Trial</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p><strong>Socially Smashing</strong><br>AI Search Optimization<br>Research & Consulting</p>
+                <p><a href="mailto:nicole@sociallysmashing.com">nicole@sociallysmashing.com</a></p>
+            </div>
+            <div class="footer-col" style="text-align: center;">
+                <p>&copy; 2025 Socially Smashing.<br>All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <script src="/footer.js"></script>
+            </div>
+        </div>
+    </footer>
 
     <div id="popupModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 style="color: var(--primary-color);">Stop Losing Clients.</h3>
+            <h3 style="color: #d97706; margin-bottom: 20px;">Stop Losing Clients.</h3>
             <p>Start ranking in AI Search. Get the FREE Download Now!</p>
+            
             <form id="leadForm">
                 <input type="text" id="name" placeholder="First Name" required>
                 <input type="email" id="email" placeholder="Email Address" required>
                 <button type="submit" class="btn-primary" style="width: 100%; border: none;">Get The Guide</button>
             </form>
-            <p id="formStatus" style="margin-top: 15px; color: var(--primary-color);"></p>
+            <p id="formStatus" style="margin-top: 15px; font-size: 14px; color: #d97706;"></p>
         </div>
     </div>
 
@@ -324,10 +301,11 @@
             const email = document.getElementById('email').value;
             const statusMsg = document.getElementById('formStatus');
             statusMsg.innerText = "Processing...";
+            
             try {
                 const { error } = await supabase.from('optin_contacts').insert([{ name: name, email: email, source: 'socially_smashing_waitlist' }]);
                 if (error) throw error;
-                statusMsg.innerText = "Success!";
+                statusMsg.innerText = "Success! Check your email.";
                 setTimeout(() => { 
                     closeModal(); 
                     window.location.href = "https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb";
