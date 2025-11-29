@@ -338,46 +338,111 @@
   <script src="/footer.js"></script>
 
   <!-- POPUP MODAL -->
-  <div id="popupModal" class="modal">
-  <div class="modal-content">
-    <h3 style="color:#d97706; font-family:'Merriweather', serif; font-size:28px; margin-bottom:10px;">
-      Stop Losing Clients
-    </h3>
+  <div id="popupModal" style="
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+  ">
+    <div style="
+      background: #ffffff;
+      padding: 40px 35px;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      text-align: center;
+      position: relative;
+    ">
+      <h3 style="
+        color:#d97706;
+        font-family:'Merriweather', serif;
+        font-size:32px;
+        margin-bottom:12px;
+        font-weight:900;
+      ">
+        Stop Losing Clients
+      </h3>
 
-    <p style="font-size:20px; margin-bottom:20px; line-height:1.5;">
-      Start ranking in AI Search<br />
-      Get the Free Guide Now
-    </p>
-    ...
-  </div>
-</div>
+      <p style="
+        font-size:20px;
+        font-weight:400;
+        color:#1f2937;
+        margin-bottom:28px;
+        line-height:1.5;
+      ">
+        Start ranking in AI Search<br>
+        Get the Free Guide Now
+      </p>
 
+      <form id="leadForm" style="margin-top:10px; text-align:left;">
 
-      <form id="leadForm" style="margin-top:10px;">
-        <label for="name" style="text-align:left; display:block; font-weight:600; margin-bottom:6px;">Name</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Your name"
-          required
-          style="width:100%; padding:14px; margin-bottom:16px; border-radius:6px; border:1px solid #d1d5db; font-size:16px; background:#f9fafb;"
+        <label for="name" style="
+          font-size:16px;
+          font-weight:700;
+          color:#111827;
+          display:block;
+          margin-bottom:6px;
+        ">Name</label>
+
+        <input type="text" id="name" placeholder="Your name" required
+          style="
+            width:100%;
+            padding:14px;
+            margin-bottom:20px;
+            border-radius:6px;
+            border:1px solid #d1d5db;
+            font-size:16px;
+            background:#f9fafb;
+          "
         />
 
-        <label for="email" style="text-align:left; display:block; font-weight:600; margin-bottom:6px;">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Your email address"
-          required
-          style="width:100%; padding:14px; margin-bottom:20px; border-radius:6px; border:1px solid #d1d5db; font-size:16px; background:#f9fafb;"
+        <label for="email" style="
+          font-size:16px;
+          font-weight:700;
+          color:#111827;
+          display:block;
+          margin-bottom:6px;
+        ">Email</label>
+
+        <input type="email" id="email" placeholder="Your email address" required
+          style="
+            width:100%;
+            padding:14px;
+            margin-bottom:26px;
+            border-radius:6px;
+            border:1px solid #d1d5db;
+            font-size:16px;
+            background:#f9fafb;
+          "
         />
 
-        <button type="submit" class="btn-primary" style="width:100%; font-size:18px; padding:16px;">
+        <button type="submit" class="btn-primary" style="
+          width:100%;
+          font-size:18px;
+          padding:16px;
+          border-radius:8px;
+          background: linear-gradient(90deg, #d97706, #f59e0b);
+          border:none;
+          color:white;
+          font-weight:700;
+          cursor:pointer;
+        ">
           Get The Guide
         </button>
       </form>
 
-      <p id="formStatus" style="margin-top:14px; color:#d97706; font-size:16px;"></p>
+      <p id="formStatus" style="
+        margin-top:18px;
+        color:#d97706;
+        font-size:16px;
+        font-weight:600;
+        text-align:center;
+      "></p>
     </div>
   </div>
 
@@ -390,7 +455,7 @@
 
     function openModal() {
       const modal = document.getElementById('popupModal');
-      if (modal) modal.style.display = 'block';
+      if (modal) modal.style.display = 'flex';
     }
 
     function closeModal() {
@@ -398,12 +463,12 @@
       if (modal) modal.style.display = 'none';
     }
 
-    window.onclick = function (event) {
+    window.addEventListener('click', function (event) {
       const modal = document.getElementById('popupModal');
-      if (event.target === modal) {
+      if (modal && event.target === modal) {
         closeModal();
       }
-    };
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('leadForm');
@@ -435,7 +500,8 @@
 
           setTimeout(() => {
             closeModal();
-            window.location.href = 'https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb';
+            window.location.href =
+              'https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb';
           }, 1500);
         } catch (err) {
           statusMsg.textContent = 'Error: ' + err.message;
