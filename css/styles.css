@@ -1,326 +1,480 @@
 /* =========================================
-   1. BRAND CONFIGURATION (High-Authority Theme)
-   ========================================= */
+1. BRAND CONFIGURATION (KEEP EXISTING LOOK)
+========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
 
 :root {
-    /* --- COLOR PALETTE --- */
-    --primary-orange: #d97706;      /* Main Action Color */
-    --gradient-orange: linear-gradient(to bottom, #f59e0b, #d97706);
-    --bg-dark: #111111;             /* Hero/Dark Sections */
-    --bg-white: #ffffff;            /* Main Content */
-    --bg-beige: #f9f7f2;            /* Alternating Light Section */
-    --text-dark: #1f2937;           /* Main Body Text */
-    --text-light: #ffffff;          /* Text on Dark BG */
-    --border-color: #e5e7eb;
-
-    /* --- FONTS --- */
-    --font-header: 'Merriweather', serif; /* Authoritative Serif */
-    --font-body: 'Open Sans', sans-serif; /* Clean Sans-Serif */
+  /* Colors (same palette as before) */
+  --primary-orange: #d97706;
+  --bg-dark: #111111;
+  --bg-white: #ffffff;
+  --bg-beige: #f9f7f2;
+  --text-dark: #1f2937;
+  --text-light: #ffffff;
+  --border-color: #e5e7eb;
 }
 
 /* =========================================
-   2. GLOBAL RESET
-   ========================================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+2. GLOBAL RESET & BASE
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--bg-white);
-    color: var(--text-dark);
-    font-size: 18px;
-    line-height: 1.7;
-    overflow-x: hidden; 
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  /* Space for fixed nav */
+  padding-top: 80px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Typography */
 h1, h2, h3, h4 {
-    font-family: var(--font-header);
-    font-weight: 900;
-    line-height: 1.3;
-    margin-bottom: 25px;
-    color: var(--text-dark);
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
-p { margin-bottom: 20px; }
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+/* Ensure contrast: dark text on light, light on dark */
+.bg-dark,
+.bg-dark p,
+.bg-dark li {
+  color: var(--text-light);
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4 {
+  color: var(--text-light);
+}
 
 /* =========================================
-   3. LAYOUT & SPACING
-   ========================================= */
+3. LAYOUT & SPACING
+========================================= */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
 section {
-    padding: 100px 0;
-    width: 100%;
+  padding: 80px 0;
+  width: 100%;
 }
 
-/* Background Utilities */
-.bg-white { background-color: var(--bg-white); color: var(--text-dark); }
-.bg-beige { background-color: var(--bg-beige); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); color: var(--text-dark); }
-.bg-dark { background-color: var(--bg-dark); color: var(--text-light); }
+.bg-white {
+  background-color: var(--bg-white);
+}
 
-/* Fix headings inside dark sections */
-.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 { color: var(--text-light); }
+.bg-beige {
+  background-color: var(--bg-beige);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+
+/* Utility alignment */
+.text-center {
+  text-align: center;
+}
 
 /* =========================================
-   4. NAVIGATION (Fixed White Bar)
-   ========================================= */
+4. NAVIGATION (MATCHES menu.js)
+========================================= */
 nav {
-    background-color: #ffffff;
-    width: 100%;
-    padding: 15px 0;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  z-index: 1000;
 }
 
-/* CRITICAL: Constrain the logo so it is NOT a banner */
-nav img {
-    max-height: 60px; 
-    width: auto;
+/* Wrapper created by menu.js */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+/* Desktop menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-menu li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-orange);
+}
+
+/* Mobile toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile nav behavior */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 10px 16px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
     display: block;
+  }
 }
 
 /* =========================================
-   5. COMPONENT STYLES
-   ========================================= */
-
-/* --- BUTTONS (Orange Gradient) --- */
+5. BUTTONS
+========================================= */
 .btn-primary {
-    display: inline-block;
-    background: var(--gradient-orange);
-    color: #ffffff;
-    padding: 18px 45px;
-    border: none;
-    font-family: var(--font-body);
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    font-size: 20px;
-    margin-top: 25px;
-    cursor: pointer;
-    transition: transform 0.2s;
+  display: inline-block;
+  background: linear-gradient(to bottom, #f59e0b, #d97706);
+  color: #ffffff;
+  padding: 16px 40px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
 }
 
-/* --- FULL WIDTH BANNERS --- */
-.full-width-banner {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    display: block;
-    cursor: pointer;
-}
-.full-width-banner img { width: 100%; height: auto; display: block; }
+/* =========================================
+6. HERO + MISSION CARDS (TOP SECTION)
+========================================= */
 
-/* --- MISSION CARDS (4-Column Grid) --- */
+.hero-section {
+  text-align: center;
+}
+
+.hero-section p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* 4-card grid below hero */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .mission-card {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 25px;
-    border-radius: 8px;
-    text-align: left;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255,255,255,0.14);
+  text-align: left;
+}
+
+.bg-white .mission-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
 }
 
 .mission-card i {
-    font-size: 30px;
-    color: #f59e0b; /* Orange Icon */
-    margin-bottom: 15px;
+  font-size: 28px;
+  color: #f59e0b;
+  margin-bottom: 10px;
 }
 
 .mission-card h4 {
-    font-family: var(--font-body);
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-transform: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .mission-card p {
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
-/* --- VIDEO GRID (1 Row, 3 Columns) --- */
+/* =========================================
+7. FULL-WIDTH BANNERS
+========================================= */
+
+.full-width-banner {
+  width: 100%;
+}
+
+.full-width-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+8. CONTENT SECTIONS
+========================================= */
+
+/* Two-column bio section (image + text) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Lists inside content sections */
+section ul {
+  padding-left: 20px;
+  margin-bottom: 18px;
+}
+
+section ul li {
+  margin-bottom: 8px;
+}
+
+/* =========================================
+9. VIDEO GRID
+========================================= */
+
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    margin-top: 40px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
 }
 
 .video-wrapper {
-    width: 100%;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.18);
 }
 
-.video-wrapper video { width: 100%; height: auto; display: block; }
+/* =========================================
+10. REVIEWS SECTION (STRUCTURAL STYLES)
+========================================= */
 
-/* --- REVIEWS GRID (2 Columns) --- */
-/* Forces beige background on the JS injected section */
+/* This is for the rebuilt reviews.js which will no longer inject its own <style> */
 #reviews {
-    background-color: var(--bg-beige) !important;
-    padding: 100px 0 !important;
+  background-color: var(--bg-beige);
+  padding: 80px 0;
 }
 
-#reviews h2 { color: var(--text-dark) !important; font-family: var(--font-header) !important; }
-#reviews p { color: var(--text-dark) !important; font-family: var(--font-body) !important; }
+#reviews .section-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-/* Styling the Grid from reviews.js */
+#reviews p {
+  color: var(--text-dark);
+}
+
+/* grid of testimonial cards */
 .reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
 }
 
 .review-card-static {
-    background-color: var(--bg-white) !important;
-    color: var(--text-dark) !important;
-    border-radius: 8px;
-    padding: 35px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  border-radius: 8px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  border: 1px solid var(--border-color);
 }
 
-.review-body { 
-    color: var(--text-dark) !important; 
-    font-family: var(--font-body) !important;
-    font-size: 17px !important;
-} 
-.review-name { 
-    color: var(--primary-orange) !important; 
-    font-weight: 700 !important; 
-    font-family: var(--font-header) !important;
+.review-stars {
+  color: #f59e0b;
+  margin-bottom: 10px;
 }
-.review-stars { color: #f59e0b !important; }
 
-/* --- FOOTER (White BG, 3 Cols, Dark Text) --- */
+.review-body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.review-name {
+  color: var(--primary-orange);
+  font-weight: 700;
+}
+
+/* =========================================
+11. FOOTER
+========================================= */
+
 .site-footer {
-    background-color: #ffffff !important;
-    color: var(--text-dark) !important;
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr; /* Contact | Copyright | Legal */
-    gap: 40px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 30px;
+  align-items: flex-start;
 }
 
 .footer-col h3 {
-    color: var(--text-dark) !important;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    font-family: var(--font-header);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
 }
 
-.footer-col p, .footer-col a {
-    color: #4b5563 !important; /* Dark Grey */
-    font-size: 15px;
-    text-decoration: none;
-    font-family: var(--font-body);
+.footer-col p {
+  margin-bottom: 8px;
 }
 
-.footer-col a:hover {
-    color: var(--primary-orange) !important;
-    text-decoration: underline;
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Legal Links List */
-.footer-links { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 10px; }
+.footer-links li {
+  margin-bottom: 8px;
+}
 
-/* --- MODAL --- */
+.footer-links a {
+  color: #4b5563;
+}
+
+.footer-links a:hover {
+  color: var(--primary-orange);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================================
+12. MODAL / POPUP (FOR LEAD FORM)
+========================================= */
+
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    backdrop-filter: blur(5px);
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
 }
 
 .modal-content {
-    background-color: #ffffff;
-    margin: 5% auto;
-    padding: 60px;
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    border-radius: 8px;
-    position: relative;
-    color: var(--text-dark);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #9ca3af;
-}
-
-input {
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 15px;
-    background: #f9fafb;
-    border: 1px solid #d1d5db;
-    color: var(--text-dark);
-    font-size: 16px;
-    border-radius: 6px;
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 900px) {
-    .cards-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 768px) {
-    .reviews-grid { grid-template-columns: 1fr !important; }
-    .video-grid { grid-template-columns: 1fr !important; }
-    .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
-    .cards-grid { grid-template-columns: 1fr; }
-    
-    h1 { font-size: 32px; }
-    .container { padding: 0 20px; }
-    .btn-primary { width: 100%; }
-}
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 520px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  color: var(--text-dark);
+  box-shadow: 0 20px 50px rgba(0,0
