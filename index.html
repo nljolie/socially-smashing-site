@@ -1,327 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socially Smashing | AI Authority & Search Optimization</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Socially Smashing | AI Search Optimization for Gen X Entrepreneurs</title>
+  <meta name="description" content="Socially Smashing helps Gen X entrepreneurs and professional firms get found, trusted, and recommended first in AI search results like ChatGPT, Perplexity, and Gemini." />
+  <link rel="canonical" href="https://sociallysmashing.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Socially Smashing | AI Search Optimization for Gen X Entrepreneurs" />
+  <meta property="og:description" content="Engineer your online presence so you are ranked top, seen first, and trusted instantly by high-paying clients in AI search." />
+  <meta property="og:url" content="https://sociallysmashing.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Top+1+-+1920x400.png" />
 
   <!-- Fonts + Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Google tag (gtag.js) with ALL four GA4 IDs -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5PWJK3VPB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z5PWJK3VPB');
+    gtag('config', 'G-TV52YBB2X7');
+    gtag('config', 'G-D9B6L9PSGN');
+    gtag('config', 'G-HKPFQ6QFZ5');
+  </script>
 
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://sociallysmashing.com/#organization",
+        "name": "Socially Smashing",
+        "url": "https://sociallysmashing.com",
+        "logo": "https://rss-feed-tiktok.s3.us-east-2.amazonaws.com/BESS+200x50+light+background.png",
+        "description": "Socially Smashing helps Gen X entrepreneurs and professional firms get found, trusted, and recommended first in AI search results like ChatGPT, Perplexity, and Gemini."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://sociallysmashing.com/#person",
+        "name": "Nicole Jolie",
+        "jobTitle": "AI Search Optimization Consultant",
+        "url": "https://sociallysmashing.com",
+        "worksFor": {
+          "@id": "https://sociallysmashing.com/#organization"
+        },
+        "description": "Nicole Jolie helps experienced Gen X entrepreneurs engineer their online presence so they are ranked top, seen first, and trusted instantly by high-value clients in AI search."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sociallysmashing.com/#website",
+        "url": "https://sociallysmashing.com",
+        "name": "Socially Smashing",
+        "publisher": {
+          "@id": "https://sociallysmashing.com/#organization"
+        },
+        "inLanguage": "en-US",
+        "description": "AI search optimization, visibility strategy, and authority building for Gen X entrepreneurs and professional service providers."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://sociallysmashing.com/#webpage",
+        "url": "https://sociallysmashing.com",
+        "name": "AI Search Optimization for Gen X Entrepreneurs",
+        "isPartOf": {
+          "@id": "https://sociallysmashing.com/#website"
+        },
+        "about": {
+          "@id": "https://sociallysmashing.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Top+1+-+1920x400.png"
+        },
+        "inLanguage": "en-US",
+        "description": "Stop being invisible in AI search. Learn how to rank in ChatGPT and AI engines so high-value clients can find and trust you."
+      },
+      {
+        "@type": "Course",
+        "@id": "https://sociallysmashing.com/#genxairising",
+        "name": "Gen X AI Rising",
+        "description": "A practical membership for Gen X entrepreneurs who want to engineer their AI search visibility, build trust, and turn authority into revenue.",
+        "provider": {
+          "@id": "https://sociallysmashing.com/#organization"
+        },
+        "url": "https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb",
+        "educationalLevel": "Professional",
+        "courseMode": "Online"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://sociallysmashing.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is there a 7-Day Free Trial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because talk is cheap. Most \"gurus\" want your money upfront because they know their product doesn’t work. The 7-day free trial lets you see the system in action before you pay."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are there refunds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The 7-day free trial is your refund period. You get full access first, and if you stay beyond Day 7 it means the value is there for you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is it $49 per month?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because access beats theory. For less than the cost of a daily coffee, you get continuous access to prompts, workflows, and visibility systems that keep you relevant in AI search."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a contract?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You can cancel at any time."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<!-- Navigation is injected by menu.js -->
-<script src="/menu.js"></script>
+  <!-- Navigation injected by menu.js -->
+  <script src="/menu.js"></script>
 
-<!-- ========================================= -->
-<!-- HERO SECTION -->
-<!-- ========================================= -->
-<section class="bg-dark hero-section">
-  <div class="container text-center">
-    <h1>My Mission Is Simple: To Stop You From Being Invisible.</h1>
-    <p>To Engineer Your Online Presence So You Are <strong>Ranked Top</strong>, <strong>Seen First</strong>, And <strong>Trusted Instantly</strong> By High-Paying Clients.</p>
-    <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Start Your 7-Day Free Trial</a>
+  <!-- HERO SECTION -->
+  <section class="bg-dark hero-section">
+    <div class="container text-center">
+      <h1>My Mission Is To Stop You From Being Invisible.</h1>
+      <p>To engineer your online presence so you are ranked top, seen first, and trusted instantly by high-paying clients.</p>
 
-    <!-- 4 Mission Cards -->
-    <div class="cards-grid">
-      <div class="mission-card">
-        <i class="fas fa-chart-line"></i>
-        <h4>Get Ranked</h4>
-        <p>Dominate the AI results. When they ask 'Who is the best?', the answer must be YOU.</p>
-      </div>
+      <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">
+        Start Your 7-Day Free Trial
+      </a>
 
-      <div class="mission-card">
-        <i class="fas fa-eye"></i>
-        <h4>Get Seen</h4>
-        <p>Visibility is the prerequisite to revenue. If AI can’t see you, your clients can't buy from you.</p>
-      </div>
-
-      <div class="mission-card">
-        <i class="fas fa-shield-alt"></i>
-        <h4>Stay Relevant</h4>
-        <p>Future-proof your brand. As search changes, ensure your business remains the recommendation.</p>
-      </div>
-
-      <div class="mission-card">
-        <i class="fas fa-user-check"></i>
-        <h4>Get Clients</h4>
-        <p>Turn visibility into income. Capture high-intent leads who already trust your authority.</p>
+      <div class="cards-grid">
+        <div class="mission-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Get Ranked</h4>
+          <p>Dominate the AI results. When someone asks who is the best, the answer must be you.</p>
+        </div>
+        <div class="mission-card">
+          <i class="fas fa-eye"></i>
+          <h4>Get Seen</h4>
+          <p>Visibility is the prerequisite to revenue. If AI can’t see you, your ideal clients can’t find you.</p>
+        </div>
+        <div class="mission-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Stay Relevant</h4>
+          <p>Search is changing fast. Make sure your business is the one AI continues to recommend.</p>
+        </div>
+        <div class="mission-card">
+          <i class="fas fa-user-check"></i>
+          <h4>Get Clients</h4>
+          <p>Turn visibility into income by capturing high-intent leads who already trust your authority.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- Top Banner -->
+  <div class="full-width-banner" onclick="openModal()">
+    <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Top+1+-+1920x400.png" alt="Free Guide Banner" />
   </div>
-</section>
 
-<!-- Top Banner -->
-<div class="full-width-banner" onclick="openModal()">
-  <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Top+1+-+1920x400.png" alt="Free Guide Banner">
-</div>
-
-<!-- ========================================= -->
-<!-- $5,000 COACHING TRAP -->
-<!-- ========================================= -->
-<section class="bg-white">
-  <div class="container">
-    <h2>The $5,000 Coaching Trap</h2>
-
-    <p>Let’s look at the math, because the math does not lie. You are likely sitting on a hard drive full of courses. You have likely paid a "High Ticket" coach <strong>$5,000, $10,000, or even more</strong> to teach you strategy, sales, and mindset.</p>
-
-    <p>And yet, you are still hunting for clients. You are still posting content that disappears into the void.</p>
-
-    <p><strong>Why?</strong> It is not because the coaching was bad. It is because you bought a Ferrari engine (the skills) but you didn't buy the wheels (the visibility).</p>
-
-    <p style="font-weight: bold; font-size: 22px;">A $5,000 coaching program cannot help you if you are invisible.</p>
-  </div>
-</section>
-
-<!-- ========================================= -->
-<!-- INSURANCE POLICY -->
-<!-- ========================================= -->
-<section class="bg-beige">
-  <div class="container">
-    <h2>The Insurance Policy for Your Business</h2>
-
-    <p>I am offering you a trade. You stop guessing how to get found. You stop hoping the algorithm picks you. Instead, you join <strong>Gen X AI Rising</strong>.</p>
-
-    <ul style="list-style:none; font-size:20px; margin-top:20px;">
-      <li>❌ <strong>Option A:</strong> Continue spending <strong>$5,000/year</strong> on coaching, hoping that "this time" it works, while remaining invisible.</li>
-      <li>✅ <strong>Option B:</strong> Spend <strong>$49/mo</strong> to get found, get trusted, and get recommended—so that your $5,000 investment actually pays off.</li>
-    </ul>
-
-    <div class="text-center">
-      <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Fix Your Visibility (Free for 7 Days)</a>
+  <!-- $5,000 Coaching Trap -->
+  <section class="bg-white">
+    <div class="container">
+      <h2>The $5,000 Coaching Trap</h2>
+      <p>Let’s look at the math, because the math does not lie. You are likely sitting on a hard drive full of courses. You have probably paid a "high-ticket" coach <strong>$5,000, $10,000, or more</strong> to teach you strategy, sales, and mindset.</p>
+      <p>You are still hunting for clients. You are still posting content that disappears into the void.</p>
+      <p><strong>Why?</strong> Not because the coaching was bad. It is because you bought the engine (skills) but not the visibility. AI can't recommend what it cannot see.</p>
+      <p style="font-weight:bold; font-size:22px;">A $5,000 coaching program cannot help you if you are invisible.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================= -->
-<!-- GHOST ECONOMY -->
-<!-- ========================================= -->
-<section class="bg-white">
-  <div class="container">
-    <h2>The Ghost Economy</h2>
-    <p>Here is the hard truth that most "gurus" won't tell you because they don't know it yet: <strong>Google is dying. AI Search is rising.</strong></p>
-    <p>Your clients are no longer scrolling through 10 blue links. They are asking AI: <em>"Who is the best coach for X?"</em></p>
-    <p>If the AI doesn't know who you are, it <strong>cannot</strong> recommend you. It will recommend your competitor. Not because they are better than you, but because they are <strong>visible</strong> to the machine.</p>
-  </div>
-</section>
-
-<!-- ========================================= -->
-<!-- BIO SECTION -->
-<!-- ========================================= -->
-<section class="bg-beige">
-  <div class="container">
-    <div class="grid-2">
-      <div>
-        <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Nicole_red_suit_512x512.png" alt="Nicole Jolie" style="border-radius:8px;">
-      </div>
-
-      <div>
-        <h2>Who Is Behind Gen X AI Rising?</h2>
-        <h3 style="color:#d97706;">I am Nicole Jolie.</h3>
-
-        <p>I work with Gen X entrepreneurs who are excellent at what they do and tired of not being seen.</p>
-
-        <p>I have spent years around best-selling authors, podcasters, and seven-figure leaders. Their experience is real, but their digital structure does not reflect it.</p>
-
-        <p style="font-weight:bold; border-left:4px solid #d97706; padding-left:20px;">
-          I built Gen X AI Rising for people like you: experienced, driven, and unwilling to disappear just because the rules of visibility changed.
-        </p>
+  <!-- Insurance Policy -->
+  <section class="bg-beige">
+    <div class="container">
+      <h2>The Insurance Policy For Your Business</h2>
+      <p>I am offering you a trade. You stop guessing how to get found. You stop hoping the algorithm picks you. Instead, you plug into <strong>Gen X AI Rising</strong>.</p>
+      <ul style="list-style:none; font-size:20px; margin-top:20px; padding:0;">
+        <li>❌ <strong>Option A:</strong> Continue spending money on coaching while staying invisible in AI search.</li>
+        <li>✅ <strong>Option B:</strong> Spend <strong>$49/mo</strong> to get found, trusted, and recommended so your other investments finally pay off.</li>
+      </ul>
+      <div class="text-center">
+        <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">
+          Fix Your Visibility (Free For 7 Days)
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================= -->
-<!-- ACCESS SECTION -->
-<!-- ========================================= -->
-<section class="bg-white">
-  <div class="container">
-    <h2>Stop Chasing. Start Ranking.</h2>
-    <p>We don't do "fluff" here. We do mechanics. Inside <strong>Gen X AI Rising</strong>, you are paying for <strong>ACCESS</strong>.</p>
-
-    <ul>
-      <li>Access to the specific prompts that signal authority to AI.</li>
-      <li>Access to the frameworks that turn you into an entity that AI trusts.</li>
-      <li>Access to a group of peers who are actively implementing this.</li>
-    </ul>
-
-    <div class="text-center">
-      <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Get Access Now - $49/mo</a>
+  <!-- Ghost Economy -->
+  <section class="bg-white">
+    <div class="container">
+      <h2>The Ghost Economy</h2>
+      <p>Here is the part most “gurus” will not tell you: <strong>Google is fading. AI search is rising.</strong></p>
+      <p>Your clients are no longer scrolling through ten blue links. They are asking AI, <em>“Who is the best person for this?”</em></p>
+      <p>If AI does not know who you are, it cannot recommend you. It will send clients to the business that is visible in its system, not necessarily the one that does the best work.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================= -->
-<!-- REVIEWS INJECTION POINT -->
-<!-- ========================================= -->
-<div id="global-reviews"></div>
-
-<!-- ========================================= -->
-<!-- VIDEO TESTIMONIALS -->
-<!-- ========================================= -->
-<section class="bg-white">
-  <div class="container">
-    <h2 style="text-align:center;">Logic Is Good. Results Are Better.</h2>
-    <p style="text-align:center;">Don't take my word for it. Listen to the people who stopped being invisible.</p>
-
-    <div class="video-grid">
-      <div class="video-wrapper">
-        <video controls preload="none">
-          <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Client+Success!.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="video-wrapper">
-        <video controls preload="none">
-          <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+I+Love+This%2C+Nicole!.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="video-wrapper">
-        <video controls preload="none">
-          <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Shopify+Success!.mp4" type="video/mp4">
-        </video>
+  <!-- Bio -->
+  <section class="bg-beige">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Nicole_red_suit_512x512.png" alt="Nicole Jolie" style="border-radius:8px;" />
+        </div>
+        <div>
+          <h2>Who Is Behind Gen X AI Rising?</h2>
+          <h3 style="color:#d97706;">I am Nicole Jolie.</h3>
+          <p>I work with Gen X entrepreneurs who are excellent at what they do and frustrated they are still invisible.</p>
+          <p>I have spent years around best-selling authors, podcasters, and seven-figure leaders. Their expertise is real, but their digital structure often does not reflect it.</p>
+          <p style="font-weight:bold; border-left:4px solid #d97706; padding-left:20px;">
+            I built Gen X AI Rising for people like you: experienced, driven, and unwilling to disappear just because the rules of visibility changed.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
+  <!-- Access section -->
+  <section class="bg-white">
+    <div class="container">
+      <h2>Stop Chasing. Start Ranking.</h2>
+      <p>Inside <strong>Gen X AI Rising</strong>, you are paying for access, not more theory.</p>
+      <ul>
+        <li>Access to prompts and workflows that signal real authority to AI.</li>
+        <li>Access to visibility frameworks that turn you into an entity AI can recognize and recommend.</li>
+        <li>Access to peers who are actually implementing this, not just talking about it.</li>
+      </ul>
+      <div class="text-center">
+        <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">
+          Get Access Now – $49/mo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews placeholder -->
+  <div id="global-reviews"></div>
+
+  <!-- Video testimonials -->
+  <section class="bg-white">
+    <div class="container">
+      <h2 style="text-align:center;">Logic Is Good. Results Are Better.</h2>
+      <p style="text-align:center;">Listen to the people who stopped being invisible.</p>
+      <div class="video-grid">
+        <div class="video-wrapper">
+          <video controls preload="none">
+            <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Client+Success!.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video controls preload="none">
+            <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+I+Love+This%2C+Nicole!.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video controls preload="none">
+            <source src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/%5BTestimonial%5D+Shopify+Success!.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Middle banner -->
+  <div class="full-width-banner" onclick="openModal()">
+    <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Middle+2-+1920x400.png" alt="Download Guide Banner" />
   </div>
-</section>
 
-<!-- Middle Banner -->
-<div class="full-width-banner" onclick="openModal()">
-  <img src="https://nicolejoliewebsite.s3.us-east-2.amazonaws.com/Desktop+Banner+Middle+2-+1920x400.png" alt="Download Guide">
-</div>
+  <!-- FAQ (matches FAQPage schema) -->
+  <section class="bg-white" id="faq-section">
+    <div class="container">
+      <h2 style="text-align:center;">Frequently Asked Questions</h2>
 
-<!-- ========================================= -->
-<!-- FAQ -->
-<!-- ========================================= -->
-<section class="bg-white">
-  <div class="container">
-    <h2 style="text-align:center;">Frequently Asked Questions</h2>
+      <p><strong>1. Why is there a 7-Day Free Trial?</strong><br />
+        Because talk is cheap. Most “gurus” want your money upfront because they know their product doesn’t work. The 7-day free trial lets you see the system in action before you pay.</p>
 
-    <p><strong>1. Why is there a 7-Day Free Trial?</strong><br>
-      Because talk is cheap. Most "gurus" want your money upfront because they know their product doesn’t work. I am taking all the risk.
-    </p>
+      <p><strong>2. Are there refunds?</strong><br />
+        No. The 7-Day Free Trial is your refund period. You get full access first, and if you stay beyond Day 7 it means the value is there for you.</p>
 
-    <p><strong>2. Are there refunds?</strong><br>
-      <strong>No.</strong> The 7-Day Free Trial <strong>is</strong> your refund period. We give you full access for free so you can verify the value yourself. If you stay past Day 7, it means you decided the value is there.
-    </p>
+      <p><strong>3. Why is it $49/month?</strong><br />
+        Because access beats theory. For less than the cost of a daily coffee, you get ongoing access to prompts, systems, and support that keep you visible and relevant.</p>
 
-    <p><strong>3. Why is it $49/month?</strong><br>
-      Because access beats theory. For less than the cost of a daily coffee, you get continuous access to the signals that make AI actually recommend you.
-    </p>
+      <p><strong>4. Is there a contract?</strong><br />
+        No. You can cancel at any time.</p>
+    </div>
+  </section>
 
-    <p><strong>4. Is there a contract?</strong><br>
-      No. You can cancel at any time.
-    </p>
+  <!-- Final CTA -->
+  <section class="bg-dark text-center">
+    <div class="container">
+      <h2 style="color:#ffffff;">The Real Risk</h2>
+      <p>The risk is not $49. The real risk is staying invisible while your competitors become the default recommendation in AI search.</p>
+      <p><strong>If they can’t find you, they can’t buy from you.</strong></p>
+      <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">
+        Start Your 7-Day Free Trial
+      </a>
+    </div>
+  </section>
 
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+  <script src="/footer.js"></script>
+
+  <!-- POPUP MODAL -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+
+      <h3 style="color:#d97706; font-family:'Merriweather', serif; font-size:28px; margin-bottom:10px;">
+        Stop Losing Clients
+      </h3>
+
+      <p style="font-size:20px; margin-bottom:20px; line-height:1.5;">
+        Start ranking in AI Search<br />
+        Get the Free Guide Now
+      </p>
+
+      <form id="leadForm" style="margin-top:10px;">
+        <label for="name" style="text-align:left; display:block; font-weight:600; margin-bottom:6px;">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Your name"
+          required
+          style="width:100%; padding:14px; margin-bottom:16px; border-radius:6px; border:1px solid #d1d5db; font-size:16px; background:#f9fafb;"
+        />
+
+        <label for="email" style="text-align:left; display:block; font-weight:600; margin-bottom:6px;">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Your email address"
+          required
+          style="width:100%; padding:14px; margin-bottom:20px; border-radius:6px; border:1px solid #d1d5db; font-size:16px; background:#f9fafb;"
+        />
+
+        <button type="submit" class="btn-primary" style="width:100%; font-size:18px; padding:16px;">
+          Get The Guide
+        </button>
+      </form>
+
+      <p id="formStatus" style="margin-top:14px; color:#d97706; font-size:16px;"></p>
+    </div>
   </div>
-</section>
 
-<!-- ========================================= -->
-<!-- FINAL CTA -->
-<!-- ========================================= -->
-<section class="bg-dark text-center">
-  <div class="container">
-    <h2 style="color:white;">The Real Risk</h2>
-    <p>The risk isn't $49. The risk is spending the next 12 months invisible, watching your competitors rise because they understood the new rules of AI Search and you didn’t.</p>
-    <p><strong>If they can't find you, they can't buy from you.</strong></p>
+  <!-- POPUP + SUPABASE JS -->
+  <script>
+    const SUPABASE_URL = 'https://exdstuwcxfcrtcrtextsob.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4ZHN0dXdjeGZ0Y3J0ZXh0c29iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMzcyNDYsImV4cCI6MjA3ODgxMzI0Nn0.dGhuF6fET9TgdM2pKuqj5qNGlsq-vqgZhWHCO4Nmf78';
 
-    <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Start Your 7-Day Free Trial</a>
-  </div>
-</section>
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-<!-- ========================================= -->
-<!-- FOOTER PLACEHOLDER -->
-<!-- ========================================= -->
-<div id="footer-placeholder"></div>
-<script src="/footer.js"></script>
-
-<!-- ========================================= -->
-<!-- POPUP MODAL -->
-<!-- ========================================= -->
-<div id="popupModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-
-    <h3 style="color:#d97706;">Stop Losing Clients.</h3>
-    <p>Start ranking in AI Search. Get the FREE Download Now!</p>
-
-    <form id="leadForm">
-      <input type="text" id="name" placeholder="First Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <button type="submit" class="btn-primary" style="width:100%;">Get The Guide</button>
-    </form>
-
-    <p id="formStatus" style="margin-top:14px; color:#d97706;"></p>
-
-  </div>
-</div>
-
-<!-- ========================================= -->
-<!-- MODAL & SUPABASE JS -->
-<!-- ========================================= -->
-<script>
-  const SUPABASE_URL = 'https://exdstuwcxfcrtcrtextsob.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4ZHN0dXdjeGZ0Y3J0ZXh0c29iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMzcyNDYsImV4cCI6MjA3ODgxMzI0Nn0.dGhuF6fET9TgdM2pKuqj5qNGlsq-vqgZhWHCO4Nmf78';
-
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-  function openModal() {
-    document.getElementById('popupModal').style.display = 'block';
-  }
-  function closeModal() {
-    document.getElementById('popupModal').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    if (event.target === document.getElementById('popupModal')) {
-      closeModal();
+    function openModal() {
+      const modal = document.getElementById('popupModal');
+      if (modal) modal.style.display = 'block';
     }
-  }
 
-  document.getElementById('leadForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+    function closeModal() {
+      const modal = document.getElementById('popupModal');
+      if (modal) modal.style.display = 'none';
+    }
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const statusMsg = document.getElementById('formStatus');
-
-    statusMsg.innerText = "Processing...";
-
-    try {
-      const { error } = await supabase
-        .from('optin_contacts')
-        .insert([{ name: name, email: email, source: 'socially_smashing_waitlist' }]);
-
-      if (error) throw error;
-
-      statusMsg.innerText = "Success! Check your email.";
-
-      setTimeout(() => {
+    window.onclick = function (event) {
+      const modal = document.getElementById('popupModal');
+      if (event.target === modal) {
         closeModal();
-        window.location.href = "https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb";
-      }, 1500);
+      }
+    };
 
-    } catch (err) {
-      statusMsg.innerText = "Error: " + err.message;
-    }
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('leadForm');
+      const statusMsg = document.getElementById('formStatus');
 
-<!-- Inject Reviews -->
-<script src="/reviews.js"></script>
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (!email) {
+          statusMsg.textContent = 'Please enter your email.';
+          return;
+        }
+
+        statusMsg.textContent = 'Processing...';
+
+        try {
+          const { error } = await supabaseClient
+            .from('optin_contacts')
+            .insert([{ name: name, email: email, source: 'socially_smashing_waitlist' }]);
+
+          if (error) throw error;
+
+          statusMsg.textContent = 'Success! Check your email.';
+
+          setTimeout(() => {
+            closeModal();
+            window.location.href = 'https://www.skool.com/genx-ai-rising-6973/about?ref=b677809dd0124d69af879acf97ea65eb';
+          }, 1500);
+        } catch (err) {
+          statusMsg.textContent = 'Error: ' + err.message;
+        }
+      });
+    });
+  </script>
+
+  <!-- Reviews -->
+  <script src="/reviews.js"></script>
 
 </body>
 </html>
