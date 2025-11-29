@@ -1,27 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const footerHTML = `
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="/legal/privacy-policy.html">Privacy Policy</a>
-                <a href="/legal/terms-of-service.html">Terms of Service</a>
-                <a href="/legal/gdpr-ccpa-policy.html">GDPR & CCPA Policy</a>
-                <a href="/legal/affiliate-disclaimer.html">Affiliate Disclaimer</a>
-                <a href="/legal/anti-class-action.html">Anti-Class Action Provision</a>
-                <a href="/legal/dmca-policy.html">DMCA Policy</a>
-                <a href="/legal/earnings-disclaimer.html">Earnings & Results Disclaimer</a>
-                <a href="/legal/legal-disclaimer.html">Legal Disclaimer</a>
-                <a href="/legal/optin-agreement.html">Optin Agreement</a>
-                <a href="/legal/refund-policy.html">Refund Policy</a>
-                <a href="/legal/testimonial-disclaimer.html">Testimonial Disclaimer</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Socially Smashing. All rights reserved.</p>
-                <p>AI Search Optimization Research | Educational Business Consulting</p>
-            </div>
+// footer.js — Clean footer injected into #footer-placeholder
+document.addEventListener('DOMContentLoaded', function () {
+
+  const footerHTML = `
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        
+        <!-- Column 1: Contact -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p>
+            <strong>Socially Smashing</strong><br>
+            AI Search Optimization<br>
+            Research & Consulting
+          </p>
+          <p>
+            <a href="mailto:nicole@sociallysmashing.com">nicole@sociallysmashing.com</a>
+          </p>
         </div>
+
+        <!-- Column 2: Site Links -->
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Legal -->
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/earnings-disclaimer.html">Earnings Disclaimer</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="footer-bottom">
+          &copy; 2025 Socially Smashing. All rights reserved.
+        </div>
+      </div>
     </footer>
-    `;
-    
-    document.getElementById('footer-placeholder').innerHTML = footerHTML;
+  `;
+
+  const placeholder = document.getElementById('footer-placeholder');
+  if (placeholder) {
+    placeholder.innerHTML = footerHTML;
+  }
 });
